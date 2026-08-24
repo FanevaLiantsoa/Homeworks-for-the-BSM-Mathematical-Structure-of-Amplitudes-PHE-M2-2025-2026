@@ -1,0 +1,152 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{amsmath, amssymb, amsthm, mathtools, graphicx, slashed}
+\usepackage{subcaption}%Permet d'utiliser subfigure
+\usepackage[top=1cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{verbatim}
+\usepackage{hyperref}
+%\tikzfeynmanset{compat=1.1.0}
+\title{Devoir de BSM du 07 Juillet 2026 }
+\author{RAZAFIMAHERY Faneva Liantsoa\\ 
+	\small{Master 2- Physique des Hautes Energies} \\ \small{Université d'Antananarivo}}
+\date{\small 12 Juillet 2026}
+\begin{document}
+	\maketitle
+	\begin{abstract}
+		\textit{Dans ce travail, il nous a été demandé de trouver les amplitudes suivantes:\\
+			\begin{itemize}
+				\item pour $S=0$ \qquad \(\mathcal{A}(1_0 2_0 3_0)\)
+				\item pour $S=2$ \qquad \(\mathcal{A}(1^{+}_2 2^{+}_2 3^{-}_2)\) et \(\mathcal{A}(1^{-}_2 2^{-}_2 3^{+}_2)\)
+		\end{itemize}}
+		Pour $\mathcal{A}(1_0 2_0 3_0)$ et \(\mathcal{A}(1^{+}_2 2^{+}_2 3^{-}_2)\) , nous adopterons le cas où l'amplitude se décompose comme suit: \[\mathcal{A}(123)= [12]^x [13]^y [23]^z\]\\
+		Rappelons que par transformation de Wigner, on a: 
+		\[\mathcal{A}(123) \rightarrow (e^{-i \theta})^{2h_i} \mathcal{A}(123) \]\\
+		Et par définition, on a aussi avec $\dot{a}$ et $\dot{b}$ les indices spinorielles et les nombres entre parenthèses le numéro de la particule:
+		\[[12] = -\varepsilon ^{\dot{a}\dot{b}} \bar{\lambda}^{(1)}_{\dot{a}}\bar{\lambda}^{(2)}_{\dot{b}}\]\\
+		qui sous transformation de Wigner obéit à:
+		\[\bar{\lambda}^{(1)}_{\dot{a}} \rightarrow e^{-i \theta}\bar{\lambda}^{(1)}_{\dot{a}}\]\\
+		Pour $\mathcal{A}(1^{-}_2 2^{-}_2 3^{+}_2)$, pour éviter que le résultat parte à l'infini dans le cas où $\langle 12 \rangle = \langle 13 \rangle = \langle 23\rangle =0$ et $[12]$, $[13]$, $[23]$ petits, nous préférerons utiliser avec $[12]$=$[13]$=$[23]$=0, la décompositions suivante:
+		\[\mathcal{A}(123)= \langle 12 \rangle ^x \langle 13 \rangle ^y \langle 23\rangle ^z\]\\
+		Avec: \[\langle 12 \rangle=\varepsilon^{ab}\lambda^{(1)}_a \lambda^{(2)}_b\]\\
+		Qui sous transformation de Wigner obéit à: 
+		\[\lambda^{(1)}_a \rightarrow e^{i \theta}\lambda^{(1)}_a\]
+		
+		
+	\end{abstract}
+	\section{Le cas $S=0$}
+	Par transformation de Wigner, on a:
+	\begin{equation}
+		\begin{split}
+			\mathcal{A}(123) &\rightarrow (e^{-i \theta})^{2(0)}\mathcal{A}(123)\equiv (e^{-i \theta(x+y)})[12]^x [13]^y [23]^z \\
+			\mathcal{A}(123) &\rightarrow (e^{-i \theta})^{2(0)}\mathcal{A}(123)\equiv (e^{-i \theta(x+z)})[12]^x [13]^y [23]^z \\
+			\mathcal{A}(123) &\rightarrow (e^{-i \theta})^{2(0)}\mathcal{A}(123)\equiv (e^{-i \theta(y+z)})[12]^x [13]^y [23]^z \\
+		\end{split}
+	\end{equation}
+	En identifiant, on trouve le système:
+	\[
+	\begin{cases}
+		x+y=0\\
+		x+z=0\\
+		y+z=0
+	\end{cases}
+	\]
+	La résolution de ce système peut se faire en partant de $x=-y$\\
+	Ce qui nous donne : $x=0, y=0, z=0$\\
+	Ainsi l'amplitude s'écrit:
+	\begin{center}
+		\fbox{$\mathcal{A}(1_0 2_0 3_0)=1$}
+	\end{center} 
+	
+	\section{Le cas $S=2$}
+	\subsection{$\mathcal{A}(1^{+}_2 2^{+}_2 3^{-}_2)$}
+	Par transformation de Wigner, on a:
+	\begin{equation}
+		\begin{split}
+			\mathcal{A}(1^{+}_2 2^{+}_2 3^{-}_2) &\rightarrow (e^{-i \theta})^{2(2)}\mathcal{A}(123)\equiv (e^{-i \theta(x+y)})[12]^x [13]^y [23]^z \\
+			\mathcal{A}(1^{+}_2 2^{+}_2 3^{-}_2) &\rightarrow (e^{-i \theta})^{2(2)}\mathcal{A}(123)\equiv (e^{-i \theta(x+z)})[12]^x [13]^y [23]^z \\
+			\mathcal{A}(1^{+}_2 2^{+}_2 3^{-}_2) &\rightarrow (e^{-i \theta})^{2(-2)}\mathcal{A}(123)\equiv (e^{-i \theta(y+z)})[12]^x [13]^y [23]^z \\
+		\end{split}
+	\end{equation}
+	En identifiant, on trouve le système:
+	\[
+	\begin{cases}
+		x+y=4\\
+		x+z=4\\
+		y+z=-4
+	\end{cases}
+	\]
+	La résolution de ce système peut se faire en partant de $x=4-y$:\\
+	\[
+	\begin{cases}
+		x=4-y\\
+		4-y+z=4\\
+		y+z=-4
+	\end{cases}
+	\]\\
+	\[
+	\begin{cases}
+		x=4-y\\
+		y=z\\
+		z=-2
+	\end{cases}
+	\]\\
+	Ce qui donne alors:
+	\[
+	\begin{cases}
+		x=6\\
+		y=-2\\
+		z=-2
+	\end{cases}
+	\]\\
+	Ainsi l'amplitude s'écrit:
+	\begin{center}
+		\Large
+		\fbox{$\mathcal{A}(1^{+}_2 2^{+}_2 3^{-}_2)= \frac{[12]^6}{[13]^2 [23]^2}$}
+	\end{center} 
+	
+	\subsection{$\mathcal{A}(1^{-}_2 2^{-}_2 3^{+}_2)$}
+	Par transformation de Wigner, on a:
+	\begin{equation}
+		\begin{split}
+			\mathcal{A}(1^{-}_2 2^{-}_2 3^{+}_2) &\rightarrow (e^{-i \theta})^{2(-2)}\mathcal{A}(123)\equiv (e^{i \theta(x+y)})\langle 12 \rangle^x \langle 13 \rangle^y \langle 23 \rangle^z \\
+			\mathcal{A}(1^{-}_2 2^{-}_2 3^{+}_2) &\rightarrow (e^{-i \theta})^{2(-2)}\mathcal{A}(123)\equiv (e^{i \theta(x+z)})\langle 12 \rangle^x \langle 13 \rangle^y \langle 23 \rangle^z \\
+			\mathcal{A}(1^{-}_2 2^{-}_2 3^{+}_2) &\rightarrow (e^{-i \theta})^{2(2)}\mathcal{A}(123)\equiv (e^{i \theta(y+z)})\langle 12 \rangle^x \langle 13 \rangle^y \langle 23 \rangle^z \\
+		\end{split}
+	\end{equation}
+	En identifiant, on trouve le système:
+	\[
+	\begin{cases}
+		x+y=4\\
+		x+z=4\\
+		y+z=4
+	\end{cases}
+	\]
+	La résolution de ce système peut se faire en partant de $x=4-y$:\\
+	\[
+	\begin{cases}
+		x=4-y\\
+		4-y+z=4\\
+		y+z=-4
+	\end{cases}
+	\]\\
+	\[
+	\begin{cases}
+		x=4-y\\
+		y=z\\
+		z=-2
+	\end{cases}
+	\]\\
+	Ce qui donne alors:
+	\[
+	\begin{cases}
+		x=6\\
+		y=-2\\
+		z=-2
+	\end{cases}
+	\]\\
+	Ainsi l'amplitude s'écrit:
+	\begin{center}
+		\Large
+		\fbox{$\mathcal{A}(1^{-}_2 2^{-}_2 3^{+}_2)= \frac{\langle 12 \rangle^6}{\langle 13 \rangle^2 \langle 23 \rangle^2}$}
+	\end{center}
+\end{document}
