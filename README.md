@@ -1,1 +1,1 @@
-# Homeworks-for-the-BSM-Mathematical-Structure-of-Amplitudes-PHE-M2-2025-2026
+This is the repository for all the homeworks and problems that were given during the BSM/Mathematical Structure of Amplitudes course of the Master 2 in the High Energy Physics at the University of Antananarivo
