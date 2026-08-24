@@ -1,1 +1,1 @@
-This is the repository for all the homeworks and problems that were given during the BSM/Mathematical Structure of Amplitudes course of the Master 2 in the High Energy Physics at the University of Antananarivo
+This is the repository for all the homeworks and problems that were given during the BSM/Mathematical Structure of Amplitudes course of the Master 2 in the High Energy Physics at the University of Antananarivo.
