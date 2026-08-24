@@ -1,0 +1,275 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[top=1cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx}
+\title{Devoir de BSM du 05 Mai 2026} 
+\author{
+	RAZAFIMAHERY Faneva Liantsoa\\
+	\medskip % Un petit espace
+	\normalsize Master 2 -Physique des Hautes Energies \\
+	\medskip
+	\normalsize Université d'Antananarivo  \\
+	%\vspace{1cm} %  pour séparer verticalement bro
+	% Ensuite, on insère le titre manuellement
+	%\Large \textbf{DEVOIR QFT: Théorème de Wick} \\ si on veut mettre le titre ici et en gras
+	% \Huge C'est grand et \LARGE ou \Large c plus petit
+}
+\date{11 Mai 2026} 
+\begin{document}
+	
+ \maketitle
+ \begin{abstract}
+ 	Dans ce travail, nous allons montrer les relations de commutation définissant l'algèbre de Poincaré en partant des relations de commutations suivantes:
+ 	\begin{equation}
+ 		\begin{split}
+ 		&[P^{\mu},P^{\nu}]=0\\
+ 		&[P^{\rho},M^{\mu \nu}]=\frac{i}{2} (\eta^{\mu\rho}P^{\nu}-\eta^{\nu\rho}P^{\mu})\\
+ 		&[M^{\rho \sigma},M^{\mu \nu}]=\frac{i}{4} (
+ 		-\eta^{\rho \mu}M^{\sigma \nu} + \eta^{\rho \nu}M^{\sigma \mu} -\eta^{\sigma \nu}M^{\rho \mu} + \eta^{\sigma \mu}M^{\rho \nu})\\
+ 		\end{split}
+ 	\end{equation}
+ 	Nous avons changé les signes dans le cours dans les deux dernières lignes pour nous conformer à différentes ressources qui utilisent des signes différentes selon la signature et le signe dans les changement de variable (David Tong lectures on Supersymmetry, Weinberg vol 1, Lecture notes Rutgers Lecture 6: The Poincaré Group...)\\
+ 	Nous avons néanmoins gardé le facteur \(\frac{1}{4}\) 
+ \end{abstract} 
+ \section{\([J^{i},J^{j}]=i\epsilon_{ijk}J^{k}\)}
+ Nous partons de: \(M^{ij}=\epsilon^{ijk}J_{k}\)\\
+ Nous avons alors: 
+ \begin{equation}
+ 	\begin{split}
+ 		\epsilon_{ijm}M^{ij}
+ 		&=\epsilon_{ijm} \epsilon^{ijk} J_{k}\\
+ 		&=2\delta^{k}_{m} J_{k}\\
+ 		&=2 J_{m}\\
+ 	\end{split}
+ \end{equation}
+ Nous trouvons l'expression: \(J_{m}=\frac{1}{2}\epsilon_{ijm}M^{ij}\).\\
+ Et puisque \(m\) est un indice muet et \(\epsilon_{ijm}\) est antisymétrique, nous pouvons écrire: \(J_{k}=\frac{1}{2}\epsilon_{ijk}M^{ij}\).\\
+ Nous définissions ainsi les expressions de \(J_{i}\) et \(J_{j}\) comme suit:
+ \(J_{i}=\frac{1}{2}\epsilon_{ikl}M^{kl}\) et 
+ \(J_{j}=\frac{1}{2}\epsilon_{jmn}M^{mn}\).\\
+ Nous travaillons dans l'espace euclidien en trois dimension alors \(J_{m}=J^{m}\).\\
+ Nous allons désormais calculer le commutateur \([J^{i},J^{j}]\):
+ \begin{equation}
+ 	\begin{split}
+ 		[J^{i},J^{j}]
+ 		&=[\frac{1}{2}\epsilon_{ikl}M^{kl},\frac{1}{2}\epsilon_{jmn}M^{mn}]\\
+ 		&=\frac{1}{4}\epsilon_{ikl}\epsilon_{jmn}[M^{kl},M^{mn}]
+ 	\end{split}
+ \end{equation}
+ Nous utilisons alors la troisième propriété de (1) en faisant les remplacements:
+ \begin{equation}
+ 	\rho\rightarrow k, \sigma\rightarrow l, \mu\rightarrow m, \nu\rightarrow n
+ \end{equation}
+ Ce qui nous donne:
+ \begin{equation}
+ 	\begin{split}
+ 		[J^{i},J^{j}]
+ 		&=\frac{i}{16}\epsilon_{ikl}\epsilon_{jmn} (
+ 		-\eta^{k m}M^{l n} + \eta^{k n}M^{l m} -\eta^{l n}M^{k m} + \eta^{l m}M^{k n})\\
+ 	\end{split}
+ \end{equation}
+ Nous travaillons avec la signature \((+---)\) alors nous avons \( \eta^{ij}=-\delta^{ij}\).\\
+ Nous injectons cette dernière égalité dans (5) pour avoir: 
+ \begin{equation}
+ 	\begin{split}
+ 		[J^{i},J^{j}]
+ 		&=\frac{i}{16}\epsilon_{ikl}\epsilon_{jmn} (
+ 		\delta^{k m}M^{l n} - \delta^{k n}M^{l m} +\delta^{l n}M^{k m} - \delta^{l m}M^{k n})\\
+ 	\end{split}
+ \end{equation}
+ Nous travaillons en trois dimensions, ce qui nous permet d'écrire que:
+ \begin{equation}
+ 	\begin{split}
+ 		&\delta^{k m}=\delta_{k m}\\
+ 		&M^{l n}=M_{l n}
+ 	\end{split}
+ \end{equation}
+ Nous obtenons ainsi:
+ \begin{equation}
+ 	\begin{split}
+		[J^{i},J^{j}]
+		&=\frac{i}{16}\epsilon_{ikl}\epsilon_{jmn} (
+		\delta_{k m}M_{l n} - \delta_{k n}M_{l m} +\delta_{l n}M_{k m} - \delta_{l m}M_{k n})\\
+ 		&=\frac{i}{16}
+ 		(\epsilon_{ikl}\epsilon_{jkn} M_{l n} 
+ 		- \epsilon_{ikl}\epsilon_{jmk} M_{l m} 
+ 		+ \epsilon_{ikl}\epsilon_{jml}M_{k m} 
+ 		- \epsilon_{ikl}\epsilon_{jln}M_{k n})\\
+ 		&=\frac{i}{16}
+ 		(\epsilon_{kil}\epsilon_{kjn} M_{l n} 
+ 		+ \epsilon_{kil}\epsilon_{kjm} M_{l m} 
+ 		+ \epsilon_{lik}\epsilon_{ljm}M_{k m} 
+ 		+ \epsilon_{lik}\epsilon_{ljn}M_{k n})\\
+ 	\end{split}
+ \end{equation}
+ Nous avons la propriété du tenseur de Levi-Civita suivante:
+ \(\epsilon_{kil}\epsilon_{kjn}=\delta_{ij}\delta_{ln}-\delta_{in}\delta_{lj}\).\\
+ Nous insérons cette propriété dans la dernière ligne (6):
+ \begin{equation}
+ 	\begin{split}
+ 		[J^{i},J^{j}]
+ 		&=\frac{i}{16}
+ 		[(\delta_{ij}\delta_{ln}-\delta_{in}\delta_{lj})M_{l n}
+ 		+(\delta_{ij}\delta_{lm}-\delta_{im}\delta_{lj})M_{l m}
+ 		+(\delta_{ij}\delta_{km}-\delta_{im}\delta_{kj})M_{k m}
+ 		+(\delta_{ij}\delta_{kn}-\delta_{in}\delta_{kj})M_{k n}]\\
+ 	\end{split}
+ \end{equation}
+ Calculons les quatre termes de cette dernière équation 
+ \begin{equation}
+ 	\begin{split}
+ 		&A)(\delta_{ij}\delta_{ln}-\delta_{in}\delta_{lj})M_{l n}
+ 		= \delta_{ij}M_{l l}-M_{j i}= -M_{j i} \quad \text{car \(M_{i j}\)est antisymétrique alors \(M_{l l}=0\)}\\
+ 		&B)(\delta_{ij}\delta_{lm}-\delta_{im}\delta_{lj})M_{l m}
+ 		=  \delta_{ij}M_{l l}-M_{j i}= -M_{j i}\\
+ 		&C)(\delta_{ij}\delta_{km}-\delta_{im}\delta_{kj})M_{k m}
+ 		=  \delta_{ij}M_{k k}-M_{j i}= -M_{j i}\\
+ 		&D)(\delta_{ij}\delta_{kn}-\delta_{in}\delta_{kj})M_{k n}
+ 		=  \delta_{ij}M_{k k}-M_{j i}= -M_{j i}
+ 	\end{split}
+ \end{equation}
+ Ainsi, l'équation (9) s'écrit:
+ \begin{equation}
+ 	\begin{split}
+ 		[J^{i},J^{j}]
+ 		&=\frac{i}{16}(-4M_{j i})\\
+ 		&=\frac{i}{4}(-M_{j i})\\
+ 		&=\frac{i}{4}(M_{i j})\\
+ 		&=\frac{i}{4}(M^{i j})\\
+ 		&=\frac{i}{4}\epsilon^{ijk}J_{k}\\
+ 		&=\frac{i}{4}\epsilon_{ijk}J^{k}\\
+ 		\end{split}
+ \end{equation}
+ Ce qui nous donne donc l'expression:
+ \begin{equation}
+ 	[J^{i},J^{j}]=\frac{i}{4}\epsilon_{ijk}J^{k}
+ \end{equation}
+ 
+ \section{\([J^{i},K^{j}]=i\epsilon_{ijk}K^{k}\)}
+ Nous avons: \(M^{0i}=K^{i}=M_{0i}\) et \(J_{i}=J^{i}=\frac{1}{2}\epsilon_{ikl}M^{kl}=\frac{1}{2}
+ \epsilon_{ikl}M_{kl}\) \\
+ Ainsi, nous pouvons calculer le commutateur:
+ \begin{equation}
+ 	\begin{split}
+ 		[J^{i},K^{j}]
+ 		&=[\frac{1}{2}\epsilon_{ikl}M^{kl}, M^{0j}]\\
+ 		&=\frac{1}{2}\epsilon_{ikl}[M^{kl},M^{0j}]\\
+ 		&=\frac{i}{8}\epsilon_{ikl}(-\eta^{k0}M^{lj}+\eta^{kj}M^{l0}-\eta^{lj}M^{k0}+\eta^{l0}M^{kj})\\
+ 		&=\frac{i}{8}\epsilon_{ikl}(-\delta_{kj}M_{l0}+\delta_{lj}M_{k0})
+ 		\quad \text{car \(\eta^{l0}=\eta^{k0}=0\) puisque \(l\neq0 \) et \(k\neq0 \)}\\
+ 		&=\frac{i}{8}(-\epsilon_{ijl}M_{l0}+\epsilon_{ikj}M_{k0})\\
+ 		&=\frac{i}{8}(-\epsilon_{ijk}M_{k0}-\epsilon_{ijk}M_{k0}) \quad \text{car \(\epsilon_{ikj}\) est antisymétrique et l,k sont des indices muets alors on a utilisé k} \\
+ 		&\text{uniquement }\\
+ 		&=\frac{i}{4}(-\epsilon_{ijk}M_{k0})\\
+ 		&=\frac{i}{4}(\epsilon_{ijk}M_{0k})\\
+ 		&=\frac{i}{4}(\epsilon_{ijk}K^{k})
+ 	\end{split}
+ \end{equation}
+ On a alors finalement: 
+ \begin{equation}
+  [J^{i},K^{j}]=\frac{i}{4}\epsilon_{ijk}K^{k}
+ \end{equation}
+
+ \section{\([K^{i},K^{j}]=i\epsilon_{ijk}J^{k}\)}
+ Calculons directement le commutateur:
+ \begin{equation}
+ 	\begin{split}
+ 		[K^{i},K^{j}]
+ 		&=[M^{0i},M^{0j}]\\
+ 		&=\frac{i}{4}(-\eta^{00}M^{ij}+\eta^{0j}M^{i0}-\eta^{ij}M^{00}+\eta^{i0}M^{0j})\\
+ 		&=\frac{i}{4} (-\eta^{00}M^{ij})\\
+ 		&= \frac{i}{4}(-M^{ij})\\
+ 		&= -\frac{i}{4}\epsilon_{ijk}J^{k}
+ 	\end{split}
+ \end{equation}
+ Nous avons alors finalement: 
+ \begin{equation}
+ 	[K^{i},K^{j}]= -\frac{i}{4}\epsilon_{ijk}J^{k}
+ \end{equation}
+ 
+ \section{\([J^{i},P^{j}]=-i\epsilon_{ijk}P^{k}\)}
+ Nous avons: \([P^{\rho},M^{\mu \nu}]=\frac{i}{2} (\eta^{\mu\rho}P^{\nu}-\eta^{\nu\rho}P^{\mu})\)\\
+ Alors: \([M^{\mu \nu},P^{\rho}]=\frac{i}{2}(\eta^{\nu\rho}P^{\mu}-\eta^{\mu\rho}P^{\nu})\)\\
+ Calculons directement \([J^{i},P^{j}]\):
+  \begin{equation}
+ 	\begin{split}
+ 		[J^{i},P^{j}]
+ 		&=\frac{1}{2}\epsilon_{ikl}[M^{k l},P^{j}]\\
+ 		&=\frac{i}{4}\epsilon_{ikl}(\eta^{lj}P^{k}-\eta^{kj}P^{l})\\
+ 		&=\frac{i}{4}\epsilon_{ikl}(-\delta^{lj}P^{k}+\delta^{kj}P^{l})\\
+ 		&=\frac{i}{4}(-\epsilon_{ikj}P^{k}+\epsilon_{ijl}P^{l})\\
+ 		&=\frac{i}{4}(\epsilon_{ijk}P^{k}+\epsilon_{ijk}P^{k})\\
+ 		&=\frac{i}{2}(\epsilon_{ijk}P^{k})
+ 	\end{split}
+ \end{equation}
+ Nous avons alors finalement: 
+ \begin{equation}
+ 	[J^{i},P^{j}]=\frac{i}{2}\epsilon_{ijk}P^{k}
+ \end{equation}
+ 
+ \section{\([K^{i},P^{j}]=i\delta_{ij}P^{0}\)}
+ Calculons directement le commutateur \([K^{i},P^{j}]\):
+ \begin{equation}
+ 	\begin{split}
+ 		[K^{i},P^{j}]
+ 		&=[M^{0i}, P^{j}]\\
+ 		&= \frac{i}{2}(\eta^{ij}P^{0}-\eta^{0j}P^{i})\\
+ 		&= \frac{i}{2}(-\delta^{ij}P^{0})\\
+ 		&=-\frac{i}{2}\delta^{ij}P^{0}\\
+ 		&=-\frac{i}{2}\delta_{ij}P^{0}
+ 	\end{split}
+ \end{equation}
+ Finalement, nous avons: 
+ \begin{equation}
+ 	[K^{i},P^{j}]=-\frac{i}{2}\delta_{ij}P^{0}
+ \end{equation}
+ 
+ \section{\([K^{i},P^{0}]=iP^{i}\)}
+ Calculons directement le commutateur \([K^{i},P^{0}]\):
+ \begin{equation}
+ 	\begin{split}
+ 		[K^{i},P^{0}]
+ 		&=[M^{0i}, P^{0}]\\
+ 		&=\frac{i}{2}(\eta^{i0}P^{0}-\eta^{00}P^{i})\\
+ 		&=\frac{i}{2}(-\eta^{00}P^{i})\\
+ 		&=\frac{i}{2}(-P^{i})\\
+ 		&=-\frac{i}{2}P^{i}
+ 	\end{split}
+\end{equation}
+Finalement, nous avons: 
+\begin{equation}
+	[K^{i},P^{0}]=-\frac{i}{2}P^{i}
+\end{equation}
+
+\section{\([P^{i},P^{j}]=0\)}
+On a déja \([P^{\mu},P^{\nu}]=0\)\\
+En travaillant en trois dimensions spatiale seulement, on a alors: 
+\begin{equation}
+	[P^{i},P^{j}]=0
+\end{equation}
+
+\section{\([J^{i},P^{0}]=0\)}
+Rappelons que \(J_{i}=\frac{1}{2}\epsilon_{ikl}M^{kl}\)\\
+Nous avons alors:
+\begin{equation}
+	\begin{split}
+  		[J^{i},P^{0}]
+  		&=\frac{1}{2}\epsilon_{ikl}[M^{kl},P^{0}]\\
+  		&=\frac{1}{2}\epsilon_{ikl}(\eta^{l0}P^{k}-\eta^{k0}P^{l})\\
+  		&=\frac{1}{2}\epsilon_{ikl}(0) \quad \text{car \(l\neq0 \) et \(k\neq0 \)} \\
+  		&=0 
+	\end{split}
+\end{equation}
+Nous avons finalement:
+\begin{equation}
+	[J^{i},P^{0}]=0
+\end{equation}
+
+\section{\([P^{i},P^{0}]=0\)}
+Encore une fois, nous savons déja que \([P^{\mu},P^{\nu}]=0\)\\
+Donc il vient que:
+\begin{equation}
+	[P^{i},P^{0}]=0
+\end{equation}
+
+\end{document}
